@@ -28,14 +28,14 @@ def data_read(dataloc):
         df_temp = pd.DataFrame(dic_temp)
         data_lis.append(df_temp)
 
-    #concanating dataframe
+    # concanating dataframe
     df_data = pd.concat(data_lis, ignore_index=True)
     df_data['Distance'] = Distance_temp
-    #drop the empty value
+    # drop the empty value
     data = df_data.where(df_data.n_cluster != 0).dropna()
-    #reset the index
+    # reset the index
     data = data.reset_index(drop=True)
-    #calculate the label
+    # calculate the label
     data.los = data.los.apply(np.sum)
     return data
 

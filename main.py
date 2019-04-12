@@ -17,7 +17,6 @@ data_train['b'] = train.delay - train.Distance/(3*pow(10,8))
 data_test['b'] = test.delay - test.Distance/(3*pow(10,8))
 
 print(data_test)
-# it is a demo
 from sklearn import svm
 import numpy as np
 X_train = np.asarray(data_train['b']).reshape(-1,1)
