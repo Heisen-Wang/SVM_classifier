@@ -37,5 +37,8 @@ def data_read(dataloc):
     data = data.reset_index(drop=True)
     # calculate the label
     data.los = data.los.apply(np.sum)
-    return data
+    data.delay = data.delay.map(lambda delay: delay[0])
+    data.bs_id = data.bs_id.astype(int)
+
+    return data, Sensor_pos, target_pos
 

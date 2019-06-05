@@ -1,6 +1,7 @@
 import math
 import numpy as np
 import pandas as pd
+from sklearn.externals import joblib
 
 def db2power(db):
     if len(db) != 0:
@@ -79,7 +80,7 @@ def features(data):
     features_['label'] = data.los
     # features
     # sort features according to the value of labels
-    features_.sort_values('label', inplace=True)
+    #features_.sort_values('label', inplace=True)
     # replace label with nlos or los
     features_['label'] = features_['label'].replace(0, 'LOS')
     features_['label'] = features_['label'].replace(1, 'NLOS')
@@ -88,6 +89,34 @@ def features(data):
     # fill the NAN value
     features_['kurtosis'] = features_['kurtosis'].where(features_['kurtosis'] > 0)
     features_['kurtosis'] = features_['kurtosis'].fillna(0)
+    features_['b'] = data.delay*(3*pow(10,8)) - data.Distance
     # sort the value according to the label
-    features_.sort_values('label', inplace=True)
+    #features_.sort_values('label', inplace=True)
     return (features_)
+
+def train_test(data_train, data_test):
+    X1_train = np.array(data_train['kurtosis']).reshape(-1,1)
+    X2_train = np.array(data_train['received_energy']).reshape(-1,1)
+    X1_test = np.array(data_test['kurtosis']).reshape(-1,1)
+    X2_test = np.array(data_test['received_energy']).reshape(-1,1)
+    X3_train = np.array(data_train['Max_amplitude']).reshape(-1,1)
+    X4_train = np.array(data_train['mean_excess_delay']).reshape(-1,1)
+    X3_test = np.array(data_test['Max_amplitude']).reshape(-1,1)
+    X4_test = np.array(data_test['mean_excess_delay']).reshape(-1,1)
+    X5_train = np.array(data_train['delay_spread']).reshape(-1,1)
+    X5_test = np.array(data_test['delay_spread']).reshape(-1,1)
+
+    from sklearn.preprocessing import StandardScaler, MinMaxScaler
+    scaler = StandardScaler()
+    scaler2 = MinMaxScaler()
+
+    scaler2.fit(np.c_[X1_train, X2_train, X3_train, X4_train, X5_train])
+    X_train = scaler2.transform(np.c_[X1_train, X2_train, X3_train, X4_train, X5_train])
+    scaler2.fit(np.c_[X1_test, X2_test, X3_test, X4_test, X5_test])
+    X_test = scaler2.transform(np.c_[X1_test, X2_test, X3_test, X4_test, X5_test])
+    scaler.fit(np.ravel(data_train['b']).reshape(-1,1))
+    y_train = scaler.transform(np.ravel(data_train['b']).reshape(-1,1))
+    y_test = scaler.transform(np.ravel(data_test['b']).reshape(-1,1))
+    scaler_filename = 'scaler.save'
+    joblib.dump(scaler, scaler_filename)
+    return X_train, y_train, X_test, y_test

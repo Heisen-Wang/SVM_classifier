@@ -26,3 +26,10 @@ def plot_decision_boundary(X, y, classifier, axis, title):
     axis.axis('off')
     axis.set_title(title)
     plt.savefig("./fig/decision_boundary")
+
+def plot_hist(error):
+    plt.figure()
+    sns.distplot(error)
+    plt.title("Error plot")
+    plt.savefig("./fig/error_plot")
+
