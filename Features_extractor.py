@@ -39,9 +39,9 @@ def delay_spread(power, delay):
     return toi_rms
 def kurtosis(power):
     if len(power) != 0:
-        mu = 1/len(power)*sum(np.sqrt(power))
-        sigma = 1/len(power)*(sum(np.sqrt(power)-mu)**2)
-        k = 1/(sigma**2*len(power))*(sum(np.sqrt(power)-mu)**4)
+        mu = 1.0/len(power)*sum(np.sqrt(power))
+        sigma = 1.0/len(power)*(sum(np.sqrt(power)-mu)**2)
+        k = 1.0/(sigma**2*len(power))*(sum(np.sqrt(power)-mu)**4)
         return k
     else:
         return np.array([])
@@ -98,13 +98,13 @@ def train_test(data_train, data_test):
     X1_train = data_train.xs('kurtosis',level = 'second').values.flatten().reshape(-1,1)
     X1_test = data_test.xs('kurtosis', level='second').values.flatten().reshape(-1, 1)
     X2_train = data_train.xs('received_energy', level='second').values.flatten().reshape(-1, 1)
-    X2_test = data_train.xs('received_energy', level='second').values.flatten().reshape(-1, 1)
+    X2_test = data_test.xs('received_energy', level='second').values.flatten().reshape(-1, 1)
     X3_train = data_train.xs('Max_amplitude', level='second').values.flatten().reshape(-1, 1)
-    X3_test = data_train.xs('Max_amplitude', level='second').values.flatten().reshape(-1, 1)
+    X3_test = data_test.xs('Max_amplitude', level='second').values.flatten().reshape(-1, 1)
     X4_train = data_train.xs('mean_excess_delay', level='second').values.flatten().reshape(-1, 1)
-    X4_test = data_train.xs('mean_excess_delay', level='second').values.flatten().reshape(-1, 1)
+    X4_test = data_test.xs('mean_excess_delay', level='second').values.flatten().reshape(-1, 1)
     X5_train = data_train.xs('delay_spread', level='second').values.flatten().reshape(-1, 1)
-    X5_test = data_train.xs('delay_spread', level='second').values.flatten().reshape(-1, 1)
+    X5_test = data_test.xs('delay_spread', level='second').values.flatten().reshape(-1, 1)
 
     from sklearn.preprocessing import StandardScaler, MinMaxScaler
     scaler = StandardScaler()
@@ -112,11 +112,10 @@ def train_test(data_train, data_test):
 
     scaler2.fit(np.c_[X1_train, X2_train, X3_train, X4_train, X5_train])
     X_train = scaler2.transform(np.c_[X1_train, X2_train, X3_train, X4_train, X5_train])
-    scaler2.fit(np.c_[X1_test, X2_test, X3_test, X4_test, X5_test])
-    X_test = scaler2.transform(np.c_[X1_test, X2_test, X3_test, X4_test, X5_test])
-    scaler.fit(np.ravel(data_train['b']).reshape(-1,1))
-    y_train = scaler.transform(np.ravel(data_train['b']).reshape(-1,1))
-    y_test = scaler.transform(np.ravel(data_test['b']).reshape(-1,1))
+    X_test = scaler2.fit_transform(np.c_[X1_test, X2_test, X3_test, X4_test, X5_test])
+    scaler.fit(data_train.xs('bias',level = 'second').values.flatten().reshape(-1,1))
+    y_train = scaler.transform(data_train.xs('bias',level = 'second').values.flatten().reshape(-1,1))
+    y_test = scaler.transform(data_test.xs('bias', level='second').values.flatten().reshape(-1, 1))
     scaler_filename = 'scaler.save'
     joblib.dump(scaler, scaler_filename)
     return X_train, y_train, X_test, y_test

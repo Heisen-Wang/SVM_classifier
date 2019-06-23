@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82bc7db9-c1b0-4b5a-b20d-cd967719dccc" name="Default Changelist" comment="calculate and plot bias">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data_reading.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data_reading.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Features_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Features_extractor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/piropa_manhattan_10x10_10000_tx_pos.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NN.py" beforeDir="false" afterPath="$PROJECT_DIR$/NN.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/feature_test.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nn.h5" beforeDir="false" afterPath="$PROJECT_DIR$/nn.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaler.save" beforeDir="false" afterPath="$PROJECT_DIR$/scaler.save" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_df.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_df.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,25 +81,28 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="NN" value="337" />
           <entry key="Python Console" value="392" />
-          <entry key="SVM" value="249" />
-          <entry key="py" value="908" />
-          <entry key="test_df" value="1590" />
+          <entry key="SVM" value="912" />
+          <entry key="py" value="1721" />
+          <entry key="test_df" value="1727" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="3139" />
+          <entry key="Python" value="5089" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="png" value="2" />
           <entry key="py" value="2" />
           <entry key="save" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="Image" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Python" value="2" />
         </counts>
@@ -109,8 +117,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="53" column="1" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+            <state relative-caret-position="393">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -119,10 +127,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fig/error_plot.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+            <state relative-caret-position="494">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -133,7 +146,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="893">
+            <state relative-caret-position="705">
               <caret line="49" column="80" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="80" />
             </state>
           </provider>
@@ -142,11 +155,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Features_extractor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="104" column="11" selection-start-line="104" selection-start-column="11" selection-end-line="104" selection-end-column="11" />
+            <state relative-caret-position="284">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <marker date="1561306034693" expanded="true" signature="1623:1624" ph="..." />
+                <marker date="1561319105147" expanded="true" signature="1629:1630" ph="..." />
               </folding>
             </state>
           </provider>
@@ -155,8 +168,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_df.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="647">
-              <caret line="35" selection-start-line="7" selection-end-line="35" />
+            <state relative-caret-position="111">
+              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="65" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -176,11 +189,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Data_reading.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="718">
-              <caret line="72" selection-start-line="72" selection-end-line="72" />
+            <state relative-caret-position="1482">
+              <caret line="78" column="25" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <marker date="1561304944261" expanded="true" signature="137:138" ph="..." />
+                <marker date="1561323079097" expanded="true" signature="137:138" ph="..." />
+                <marker date="1561323079097" expanded="true" signature="3256:3271" ph="..." />
               </folding>
             </state>
           </provider>
@@ -213,13 +227,13 @@
         <option value="$USER_HOME$/Desktop/study/courses/AML/exercise/Ex2/ex1start/cartpole.py" />
         <option value="$PROJECT_DIR$/svr demo.py" />
         <option value="$PROJECT_DIR$/data_test.py" />
-        <option value="$PROJECT_DIR$/NN.py" />
         <option value="$PROJECT_DIR$/plot.py" />
         <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/NN.py" />
+        <option value="$PROJECT_DIR$/Features_extractor.py" />
         <option value="$PROJECT_DIR$/test_df.py" />
         <option value="$PROJECT_DIR$/Data_reading.py" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/Features_extractor.py" />
       </list>
     </option>
   </component>
@@ -253,6 +267,11 @@
             <path>
               <item name="SVM_classifier" type="b2602c69:ProjectViewProjectNode" />
               <item name="Localization" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SVM_classifier" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Localization" type="462c0819:PsiDirectoryNode" />
+              <item name="fig" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SVM_classifier" type="b2602c69:ProjectViewProjectNode" />
@@ -297,9 +316,6 @@
       <module name="SVM_classifier" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -423,8 +439,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test_df" />
         <item itemvalue="Python.NN" />
+        <item itemvalue="Python.test_df" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.data_test" />
         <item itemvalue="Python.svr demo" />
@@ -484,14 +500,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="23" width="1393" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" id="Project" order="0" sideWeight="0.4535032" visible="true" weight="0.2531458" />
+      <window_info id="Project" order="0" sideWeight="0.4535032" visible="true" weight="0.17912658" />
       <window_info id="Structure" order="1" sideWeight="0.5494506" side_tool="true" weight="0.12953368" />
       <window_info id="Favorites" order="2" sideWeight="0.52878964" side_tool="true" weight="0.18025751" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
       <window_info anchor="bottom" id="Cvs" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.19036427" weight="0.41130185" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.19036427" weight="0.21019109" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="5" sideWeight="0.53598017" side_tool="true" weight="0.03626943" />
       <window_info anchor="bottom" id="Version Control" order="6" sideWeight="0.5363057" side_tool="true" weight="0.03626943" />
@@ -501,7 +518,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Terminal" order="3" sideWeight="0.49489796" side_tool="true" weight="0.3204578" />
       <window_info anchor="right" x="57" y="346" width="1372" height="230" id="Run" order="4" sideWeight="0.3078731" weight="0.64377683" />
-      <window_info anchor="right" x="57" y="307" width="1372" height="308" id="Python Console" order="5" sideWeight="0.5464968" visible="true" weight="0.46706143" />
+      <window_info active="true" anchor="right" x="57" y="307" width="1372" height="308" id="Python Console" order="5" sideWeight="0.5464968" visible="true" weight="0.5699482" />
     </layout>
     <layout-to-restore>
       <window_info id="Project" order="0" sideWeight="0.49619773" visible="true" weight="0.12614517" />
@@ -631,52 +648,11 @@
     <entry file="file://$PROJECT_DIR$/nn_minmax.h5" />
     <entry file="file://$PROJECT_DIR$/fig/nn.png" />
     <entry file="file://$PROJECT_DIR$/fig/1.png" />
-    <entry file="file://$PROJECT_DIR$/fig/pair_plot.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/fig/svm.png" />
     <entry file="file://$PROJECT_DIR$/data_test.py" />
     <entry file="file://$PROJECT_DIR$/svr demo.py" />
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="893">
-          <caret line="49" column="80" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data_reading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="718">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1561304944261" expanded="true" signature="137:138" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_df.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="35" selection-start-line="7" selection-end-line="35" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scaler.save">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="53" column="1" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plot.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -688,6 +664,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="49" column="80" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/anaconda3/envs/ML/lib/python2.7/site-packages/IPython/core/interactiveshell.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -695,23 +678,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/fig/pair_plot.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fig/error_plot.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_df.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        <state relative-caret-position="494">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Data_reading.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1482">
+          <caret line="78" column="25" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1561323079097" expanded="true" signature="137:138" ph="..." />
+            <marker date="1561323079097" expanded="true" signature="3256:3271" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Features_extractor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="104" column="11" selection-start-line="104" selection-start-column="11" selection-end-line="104" selection-end-column="11" />
+        <state relative-caret-position="284">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1561306034693" expanded="true" signature="1623:1624" ph="..." />
+            <marker date="1561319105147" expanded="true" signature="1629:1630" ph="..." />
           </folding>
         </state>
       </provider>

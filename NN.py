@@ -2,7 +2,7 @@ import keras
 from keras.models import Model, Sequential
 from keras.layers import Dense,  Dropout
 from Features_extractor import features, train_test
-from Data_reading import data_read
+from Data_reading import data_read, to_regular
 from IPython.display import clear_output
 from test import localization
 from sklearn.externals import joblib
@@ -43,9 +43,10 @@ train, sensor_train, target_train = data_read('./data/piropa_manhattan_900_tx_po
 test, sensor_test, target_test = data_read('./data/piropa_manhattan_25_tx_pos.mat')
 
 # Generate the train and test data set
-data_train = features(train)
-data_test = features(test)
-
+data_train = to_regular(train, sensor_train, target_train,features(train))
+data_test = to_regular(test, sensor_test, target_test, features(test))
+data_train.to_pickle('./data/data_train')
+data_test.to_pickle('./data/data_test')
 X_train, y_train, X_test, y_test = train_test(data_train, data_test)
 
 # build the model

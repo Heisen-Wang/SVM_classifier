@@ -8,7 +8,7 @@ features_test = features(test)
 def to_regular(test, sensor_test, target_test, features_test):
     target_len = test.bs_id.unique()
     sensor_len = sensor_test.shape[0]
-    columns_ind = [item+1 for item in range(sensor_len)]
+    columns_ind = ['s'+str(item+1) for item in range(sensor_len)]
 
     arrays = [target_len, np.array(['pos', 'distance','received_energy', 'Max_amplitude', 'mean_excess_delay',
                         'delay_spread', 'kurtosis', 'delay','bias','b_est','label'])
@@ -34,4 +34,4 @@ def to_regular(test, sensor_test, target_test, features_test):
             ind += 1
     return df
 
-
+df = to_regular(test, sensor_test, target_test, features_test)
