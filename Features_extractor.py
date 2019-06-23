@@ -95,16 +95,16 @@ def features(data):
     return (features_)
 
 def train_test(data_train, data_test):
-    X1_train = np.array(data_train['kurtosis']).reshape(-1,1)
-    X2_train = np.array(data_train['received_energy']).reshape(-1,1)
-    X1_test = np.array(data_test['kurtosis']).reshape(-1,1)
-    X2_test = np.array(data_test['received_energy']).reshape(-1,1)
-    X3_train = np.array(data_train['Max_amplitude']).reshape(-1,1)
-    X4_train = np.array(data_train['mean_excess_delay']).reshape(-1,1)
-    X3_test = np.array(data_test['Max_amplitude']).reshape(-1,1)
-    X4_test = np.array(data_test['mean_excess_delay']).reshape(-1,1)
-    X5_train = np.array(data_train['delay_spread']).reshape(-1,1)
-    X5_test = np.array(data_test['delay_spread']).reshape(-1,1)
+    X1_train = data_train.xs('kurtosis',level = 'second').values.flatten().reshape(-1,1)
+    X1_test = data_test.xs('kurtosis', level='second').values.flatten().reshape(-1, 1)
+    X2_train = data_train.xs('received_energy', level='second').values.flatten().reshape(-1, 1)
+    X2_test = data_train.xs('received_energy', level='second').values.flatten().reshape(-1, 1)
+    X3_train = data_train.xs('Max_amplitude', level='second').values.flatten().reshape(-1, 1)
+    X3_test = data_train.xs('Max_amplitude', level='second').values.flatten().reshape(-1, 1)
+    X4_train = data_train.xs('mean_excess_delay', level='second').values.flatten().reshape(-1, 1)
+    X4_test = data_train.xs('mean_excess_delay', level='second').values.flatten().reshape(-1, 1)
+    X5_train = data_train.xs('delay_spread', level='second').values.flatten().reshape(-1, 1)
+    X5_test = data_train.xs('delay_spread', level='second').values.flatten().reshape(-1, 1)
 
     from sklearn.preprocessing import StandardScaler, MinMaxScaler
     scaler = StandardScaler()
