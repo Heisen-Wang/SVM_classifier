@@ -52,7 +52,7 @@ X_train, y_train, X_test, y_test = train_test(data_train, data_test)
 # build the model
 
 model = Sequential()
-model.add(Dropout(0.2, input_shape=(X_train.shape[1],)))
+model.add(Dense(10, input_shape=(X_train.shape[1],)))
 model.add(Dense(32, kernel_initializer= 'normal',activation='relu'))
 model.add(Dense(64, kernel_initializer= 'normal',activation='relu'))
 model.add(Dense(128, kernel_initializer= 'normal',activation='relu'))
@@ -66,7 +66,7 @@ model.summary()
 model.compile(optimizer='adam', loss='mse')
 
 # train
-model.fit(X_train, y_train, batch_size=200, validation_data= (X_test, y_test),
+model.fit(X_train, y_train, batch_size=200,  validation_split=0.2,
           epochs=500, shuffle=True, callbacks=[plot_losses])
 model.save('nn.h5')
 # test

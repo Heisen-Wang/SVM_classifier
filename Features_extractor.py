@@ -82,8 +82,8 @@ def features(data):
     # sort features according to the value of labels
     #features_.sort_values('label', inplace=True)
     # replace label with nlos or los
-    features_['label'] = features_['label'].replace(0, 'LOS')
-    features_['label'] = features_['label'].replace(1, 'NLOS')
+    features_['label'] = features_['label'].replace(0, 'NLOS')
+    features_['label'] = features_['label'].replace(1, 'LOS')
 
     # features['Distance_dif'] = features.mean_excess_delay*3e8-data.Distance
     # fill the NAN value
@@ -114,8 +114,8 @@ def train_test(data_train, data_test):
     X_train = scaler2.transform(np.c_[X1_train, X2_train, X3_train, X4_train, X5_train])
     X_test = scaler2.fit_transform(np.c_[X1_test, X2_test, X3_test, X4_test, X5_test])
     scaler.fit(data_train.xs('bias',level = 'second').values.flatten().reshape(-1,1))
-    y_train = scaler.transform(data_train.xs('bias',level = 'second').values.flatten().reshape(-1,1))
-    y_test = scaler.transform(data_test.xs('bias', level='second').values.flatten().reshape(-1, 1))
+    y_train = data_train.xs('bias',level = 'second').values.flatten().reshape(-1,1)
+    y_test = data_test.xs('bias', level='second').values.flatten().reshape(-1, 1)
     scaler_filename = 'scaler.save'
     joblib.dump(scaler, scaler_filename)
     return X_train, y_train, X_test, y_test

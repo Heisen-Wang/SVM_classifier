@@ -8,9 +8,9 @@ train, sensor_train, target_train = data_read('./data/piropa_manhattan_900_tx_po
 features_test = features(test)
 features_train = features(train)
 features_ori = features(test)
-features_test = features_test.loc[features_test['label'] == 'LOS'].drop(['label'], axis = 1).astype(float)
+features_test = features_test.loc[features_test['label'] == 'NLOS'].drop(['label'], axis = 1).astype(float)
 
-features_train = features_train.loc[features_train['label'] == 'LOS'].drop(['label'], axis = 1).astype(float)
+features_train = features_train.loc[features_train['label'] == 'NLOS'].drop(['label'], axis = 1).astype(float)
 
 import keras
 from keras.models import Model, Sequential
