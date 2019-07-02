@@ -33,3 +33,16 @@ def plot_hist(error):
     plt.title("Error plot")
     plt.savefig("./fig/error_plot")
 
+def plot_reg(test):
+    y = test.loc[test['los'] == 0]['Distance']
+    x = test.loc[test['los'] == 0]['delay'] * (3 * pow(10, 8))
+    plt.scatter(x,y, label = 'test')
+    a = np.linspace(20,200,1000)
+    b = a
+    plt.plot(a,b)
+    plt.xlabel('ranging')
+    plt.ylabel('Distance')
+    y_loc = test.delay * 3 * pow(10, 8) - test.b_est
+    y_loc = y_loc[test.index[test['los'] == 0]]
+    plt.scatter(y_loc, y, label='prediction')
+    plt.legend()
